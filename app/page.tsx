@@ -26,6 +26,7 @@ export default function Home() {
             href="https://eportugal.gov.pt/noticias/novas-tabelas-de-retencao-na-fonte-irs"
             className={cn(buttonVariants({ variant: "link" }), "self-end")}
             rel="noreferrer"
+            target="_blank"
           >
             Referência: ePortugal
           </a>
