@@ -21,7 +21,7 @@ export default function Footer() {
       </div>
       <div className="flex flex-col md:flex-row gap-2 md:gap-8">
         <a
-          href="https://github.com/nip10"
+          href="https://github.com/nip10/payroll-2024"
           className={buttonVariants({ variant: "link" })}
           rel="noreferrer"
         >
