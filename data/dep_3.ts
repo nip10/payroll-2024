@@ -1,0 +1,246 @@
+export const dep_3 = {
+  incomeType: "Trabalho dependente",
+  context: "Casado, único titular",
+  periods: [
+    {
+      period: {
+        start: new Date(2024, 0, 1),
+        end: new Date(2024, 7, 31),
+      },
+      brackets: [
+        {
+          remuneracaoMensalMax: 857,
+          taxaMarginalMax: 0,
+          parcelaAbate: 0,
+          additionalAmountPerDependent: 0,
+        },
+        {
+          remuneracaoMensalMax: 935,
+          taxaMarginalMax: 0.1325,
+          parcelaAbate: (R: number) => 0.1325 * 2.6 * (1186.62 - R),
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 1001,
+          taxaMarginalMax: 0.1325,
+          parcelaAbate: (R: number) => 0.1325 * 1.4 * (1402.3 - R),
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 1393,
+          taxaMarginalMax: 0.1325,
+          parcelaAbate: 74.44,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 1900,
+          taxaMarginalMax: 0.185,
+          parcelaAbate: 147.57,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 2801,
+          taxaMarginalMax: 0.26,
+          parcelaAbate: 290.07,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 3423,
+          taxaMarginalMax: 0.28,
+          parcelaAbate: 346.09,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 4099,
+          taxaMarginalMax: 0.2915,
+          parcelaAbate: 385.46,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 5800,
+          taxaMarginalMax: 0.325,
+          parcelaAbate: 522.78,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 6422,
+          taxaMarginalMax: 0.36,
+          parcelaAbate: 725.78,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 20064.21,
+          taxaMarginalMax: 0.425,
+          parcelaAbate: 1143.21,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: Infinity,
+          taxaMarginalMax: 0.4717,
+          parcelaAbate: 2080.2,
+          additionalAmountPerDependent: 42.86,
+        },
+      ],
+    },
+    {
+      period: {
+        start: new Date(2024, 8, 1),
+        end: new Date(2024, 9, 31),
+      },
+      brackets: [
+        {
+          remuneracaoMensalMax: 904,
+          taxaMarginalMax: 0,
+          parcelaAbate: 0,
+          additionalAmountPerDependent: 0,
+        },
+        {
+          remuneracaoMensalMax: 935,
+          taxaMarginalMax: 0,
+          parcelaAbate: 0,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 989,
+          taxaMarginalMax: 0,
+          parcelaAbate: 0,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 1070,
+          taxaMarginalMax: 0,
+          parcelaAbate: 0,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 1394,
+          taxaMarginalMax: 0,
+          parcelaAbate: 0,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 1912,
+          taxaMarginalMax: 0.0165,
+          parcelaAbate: 23.01,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 2178,
+          taxaMarginalMax: 0.0505,
+          parcelaAbate: 87.95,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 2671,
+          taxaMarginalMax: 0.0591,
+          parcelaAbate: 106.69,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 3284,
+          taxaMarginalMax: 0.1297,
+          parcelaAbate: 295.33,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 5906,
+          taxaMarginalMax: 0.3072,
+          parcelaAbate: 878.33,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 20064,
+          taxaMarginalMax: 0.3872,
+          parcelaAbate: 1350.25,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: Infinity,
+          taxaMarginalMax: 0.4717,
+          parcelaAbate: 3046.68,
+          additionalAmountPerDependent: 42.86,
+        },
+      ],
+    },
+    {
+      period: {
+        start: new Date(2024, 10, 1),
+        end: new Date(2024, 11, 31),
+      },
+      brackets: [
+        {
+          remuneracaoMensalMax: 904,
+          taxaMarginalMax: 0,
+          parcelaAbate: 0,
+          additionalAmountPerDependent: 0,
+        },
+        {
+          remuneracaoMensalMax: 935,
+          taxaMarginalMax: 0.13,
+          parcelaAbate: (R: number) => 0.13 * 2.6 * (1251.62 - R),
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 989,
+          taxaMarginalMax: 0.13,
+          parcelaAbate: (R: number) => 0.13 * 1.35 * (1545.09 - R),
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 1070,
+          taxaMarginalMax: 0.13,
+          parcelaAbate: 97.54,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 1394,
+          taxaMarginalMax: 0.132,
+          parcelaAbate: 99.68,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 1912,
+          taxaMarginalMax: 0.165,
+          parcelaAbate: 145.69,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 2178,
+          taxaMarginalMax: 0.2018,
+          parcelaAbate: 216.11,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 2671,
+          taxaMarginalMax: 0.2362,
+          parcelaAbate: 291.09,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 3284,
+          taxaMarginalMax: 0.2594,
+          parcelaAbate: 352.9,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 5906,
+          taxaMarginalMax: 0.3072,
+          parcelaAbate: 510.04,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: 20064,
+          taxaMarginalMax: 0.3872,
+          parcelaAbate: 981.97,
+          additionalAmountPerDependent: 42.86,
+        },
+        {
+          remuneracaoMensalMax: Infinity,
+          taxaMarginalMax: 0.4717,
+          parcelaAbate: 2678.4,
+          additionalAmountPerDependent: 42.86,
+        },
+      ],
+    },
+  ],
+};
