@@ -1,7 +1,11 @@
 {
   "name": "payroll",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": {
+    "name": "Diogo Cardoso",
+    "email": "hi@diogocardoso.dev"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
