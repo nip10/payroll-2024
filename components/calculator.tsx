@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
+import { useDebounce } from "react-use";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -12,8 +13,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { dep_1 } from "../data/dep_1";
-import { calculateAnnualRetention, RetentionResult } from "../lib/calculate";
 import {
   Form,
   FormControl,
@@ -22,7 +21,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { calculateAnnualRetention, RetentionResult } from "../lib/calculate";
 import ResultsTable from "./results-table";
+import { dep_1 } from "../data/dep_1";
 import { dep_2 } from "@/data/dep_2";
 import { dep_3 } from "@/data/dep_3";
 import { dep_4 } from "@/data/dep_4";
@@ -148,15 +149,28 @@ const Calculator = () => {
     "dep_6",
     "dep_7",
   ].includes(selectedTableWatcher);
+  useEffect(() => {
+    form.setValue("numDependents", 0);
+  }, [form, shouldShowDependents]);
+
   const shouldShowHandicap = ["pensions_3", "pensions_4"].includes(
     selectedTableWatcher
   );
-
   useEffect(() => {
-    // Reset dependents and handicap when changing tables
-    form.setValue("numDependents", 0);
     form.setValue("numHandicap", 0);
-  }, [form, selectedTableWatcher]);
+  }, [form, shouldShowHandicap]);
+
+  const watchedData = useWatch({
+    control: form.control,
+    defaultValue: defaultValues,
+  });
+  useDebounce(
+    () => {
+      form.handleSubmit(onSubmit)();
+    },
+    200,
+    [watchedData]
+  );
 
   // Handle form submission
   const onSubmit = (data: CalculatorState) => {
@@ -164,11 +178,18 @@ const Calculator = () => {
       (table) => table.id === data.selectedTable
     )?.data;
 
+    // This is not really necessary because we are dynamically showing the fields
+    const extra = shouldShowDependents
+      ? data.numDependents
+      : shouldShowHandicap
+      ? data.numHandicap
+      : 0;
+
     if (selectedTable) {
       const newResults = calculateAnnualRetention(
         data.monthlySalary,
         selectedTable,
-        data.numDependents ?? data.numHandicap ?? 0
+        extra
       );
       setResults(newResults);
     }
@@ -176,8 +197,8 @@ const Calculator = () => {
 
   return (
     <Form {...form}>
-      {/* Use onChange instead of onSubmit to calculate the retention on every form change */}
-      <form onChange={form.handleSubmit(onSubmit)} className="space-y-6">
+      {/* No onSubmit because we are auto-submitting via watcher+debounce */}
+      <form className="space-y-6">
         {/* Table selection */}
         <FormField
           control={form.control}
